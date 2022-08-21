@@ -24,9 +24,9 @@ void main()
                 break;
             case 1:
                 if(inp[i]=='a')
-                    state=0;
-                else if(inp[i]=='b')
                     state=2;
+                else if(inp[i]=='b')
+                    state=3;
                 else
                 {
                     printf("Not Valid !!!");
@@ -35,9 +35,9 @@ void main()
                 break;
             case 2:
                 if(inp[i]=='a')
-                    state=3;
+                    state=2;
                 else if(inp[i]=='b')
-                    state=1;
+                    state=3;
                 else
                 {
                     printf("Not Valid !!!");
@@ -46,9 +46,20 @@ void main()
                 break;
             case 3:
                 if(inp[i]=='a')
-                    state=2;
+                    state=1;
                 else if(inp[i]=='b')
-                    state=0;
+                    state=4;
+                else
+                {
+                    printf("Not Valid !!!");
+                    exit(0);
+                }
+                break;
+            case 4:
+                if(inp[i]=='a')
+                    state=1;
+                else if(inp[i]=='b')
+                    state=4;
                 else
                 {
                     printf("Not Valid !!!");
@@ -57,7 +68,7 @@ void main()
                 break;
         }
     }
-    if(state==0)
+    if(state==2 || state==4)
         printf("String is ACCEPTED\n");
     else
         printf("String is NOT ACCEPTED\n");
